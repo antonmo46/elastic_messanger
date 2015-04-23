@@ -1,3 +1,4 @@
 module.exports = {
-	sessionSecret : 'reading499'
+	db: 'mongodb://localhost/mean-book',
+	sessionSecret: 'developmentSessionSecret'
 };
