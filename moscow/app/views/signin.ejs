@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <title>
+      <%=title %>
+    </title>
+  </head>
+  <body>
+    <% for(var i in messages) { %>
+    <div class="flash">
+      <%= messages[i] %>
+    </div><% } %>
+    <form action="/signin" method="post">
+      <div>
+        <label>Username:</label> <input type="text" name="username">
+      </div>
+      <div>
+        <label>Password:</label> <input type="password" name="password">
+      </div>
+      <div>
+        <input type="submit" value="Sign In">
+      </div>
+    </form>
+	<a href="/oauth/facebook">Sign in with Facebook</a>
+  </body>
+</html>
