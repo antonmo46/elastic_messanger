@@ -3,7 +3,6 @@ url = require('url'),
 FacebookStrategy = require('passport-facebook').Strategy,
 config = require('../config'),
 users = require('../../app/controllers/users.server.controller');
-
 module.exports = function () {
 	passport.use(new FacebookStrategy({
 			clientID : config.facebook.clientID,
