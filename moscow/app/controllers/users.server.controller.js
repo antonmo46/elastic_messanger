@@ -80,7 +80,7 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
 		} else {
 			if (!user) {
 				var possibleUsername = profile.username; //||
-					//((profile.email) ? profile.email.split('@')[0] : '');
+				//((profile.email) ? profile.email.split('@')[0] : '');
 				User.findUniqueUsername(possibleUsername, null,
 					function (availableUsername) {
 					profile.username = availableUsername;
@@ -99,4 +99,12 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
 			}
 		}
 	});
+};
+exports.requiresLogin = function (req, res, next) {
+	if (!req.isAuthenticated()) {
+		return res.status(401).send({
+			message : 'User is not logged in'
+		});
+	}
+	next();
 };
